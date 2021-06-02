@@ -11,6 +11,22 @@
 
     <artifactId>luwu-service</artifactId>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.backbook</groupId>
+            <artifactId>luwu-dao</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.backbook</groupId>
+            <artifactId>luwu-model</artifactId>
+        </dependency>
+
+
+
+
+    </dependencies>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>

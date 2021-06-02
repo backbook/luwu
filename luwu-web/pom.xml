@@ -13,6 +13,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.github.backbook</groupId>
+            <artifactId>luwu-service</artifactId>
+        </dependency>
+
+
         <!--spring boot jars-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
