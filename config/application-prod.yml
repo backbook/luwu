@@ -1,0 +1,76 @@
+server:
+  port: 6565
+
+logging:
+  dir: log
+  config: config/logback.xml
+  instance:
+    dir: log/instance_log
+    pattern: /job_id_%s/instance_id_%s.log
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    mapper:
+      propagate-transient-marker: true
+  thymeleaf:
+    prefix: "classpath:/static/"
+  datasource:
+    url: jdbc:mysql://localhost:3306/plink?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.github.hairless.plink.dao.conf.DataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000t
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.github.hairless.plink.model
+  configLocation: classpath:config/mybatis-config.xml
+
+
+#热部署组件
+devtools:
+  livereload:
+    enabled: true #是否支持livereload
+    port: 8666
+  restart:
+    enabled: true #是否支持热部署
+
+kerberos:
+  keytab:
+  principal:
+
+#'local' or 'yarn' or 'standalone'
+cluster:
+  mode: local
+  queue:
+
+#平台flink任务的默认配置，优先级小于任务的flink conf，大于flink客户端conf
+#可以在配置里使用占位符，例：metrics.reporter.xxx.jobId: ${jobId}
+#目前支持的占位符：
+# ${host}: 部署plink的服务器host
+# ${jobId}: 运行任务的plink jobId
+# ${instanceId}: 运行任务的plink 实例Id
+flink:
+  defaultConfs:
+    execution.checkpointing.interval: 60000
+    execution.checkpointing.timeout: 120000
+    metrics.reporter.checkpoint.factory.class: com.github.hairless.plink.checkpoint.reporter.PlinkCheckpointReporterFactory
+    metrics.reporter.checkpoint.interval: 30 SECONDS
+    metrics.reporter.checkpoint.service: http://${host}:8666/mng/jobStateInfo/addJobStateInfo
+    metrics.reporter.checkpoint.jobId: ${jobId}
+    metrics.reporter.checkpoint.instanceId: ${instanceId}
