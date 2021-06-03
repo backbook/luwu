@@ -21,7 +21,7 @@ spring:
     username: root
     password: Server2008!
     driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.github.hairless.plink.dao.conf.DataSource
+    type: com.github.backbook.luwu.dao.conf.DataSource
     initialSize: 5
     minIdle: 5
     maxActive: 20
@@ -38,7 +38,7 @@ spring:
 
 mybatis:
   mapperLocations: classpath:mapper/*.xml
-  type-aliases-package: com.github.hairless.plink.model
+  type-aliases-package: com.github.backbook.luwu.model
   configLocation: classpath:config/mybatis-config.xml
 
 

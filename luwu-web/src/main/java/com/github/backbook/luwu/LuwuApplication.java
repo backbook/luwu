@@ -5,10 +5,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
+import tk.mybatis.spring.annotation.MapperScan;
 
 @Slf4j
 @SpringBootApplication
 @ComponentScan({"com.github.backbook"})
+@MapperScan("com.github.backbook.luwu.dao.mapper")
 public class LuwuApplication {
 
     public static void main(String[] args) {
