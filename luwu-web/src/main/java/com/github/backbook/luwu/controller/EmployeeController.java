@@ -1,24 +1,23 @@
 package com.github.backbook.luwu.controller;
 
 
-import com.github.backbook.luwu.model.pojo.User;
-import com.github.backbook.luwu.service.UserService;
+import com.github.backbook.luwu.model.pojo.Employee;
+import com.github.backbook.luwu.service.EmployeeService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
 @RequestMapping("/test")
-public class UserController {
+public class EmployeeController {
 
     @Resource
-    UserService userService;
+    EmployeeService userService;
 
-    @RequestMapping("/userList")
-    public  List<User> userList(){
-        List<User> list = userService.list();
+    @RequestMapping("/employeeList")
+    public  List<Employee> userList(){
+        List<Employee> list = userService.list();
         return list;
     }
 

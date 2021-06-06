@@ -21,7 +21,6 @@ spring:
     username: root
     password: Server2008!
     driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.github.backbook.luwu.dao.conf.DataSource
     initialSize: 5
     minIdle: 5
     maxActive: 20
@@ -34,13 +33,6 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxPoolPreparedStatementPerConnectionSize: 20
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000t
-
-mybatis:
-  mapperLocations: classpath:mapper/*.xml
-  type-aliases-package: com.github.backbook.luwu.model
-  configLocation: classpath:config/mybatis-config.xml
-
 
 #热部署组件
 devtools:
@@ -56,7 +48,7 @@ kerberos:
 
 #'local' or 'yarn' or 'standalone'
 cluster:
-  mode: local
+  mode: yarn
   queue:
 
 #平台flink任务的默认配置，优先级小于任务的flink conf，大于flink客户端conf
