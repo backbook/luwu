@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <GithubOutlined /><span>此网页是个人学习的</span>
   </div>
 </template>

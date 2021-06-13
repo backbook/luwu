@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import TheAll from '@/components/the-all.vue'; // @ is an alias to /src
+import TheAll from '@/components/TheAll.vue'; // @ is an alias to /src
 
 export default defineComponent({
   name: 'APP',
