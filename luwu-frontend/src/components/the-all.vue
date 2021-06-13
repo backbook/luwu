@@ -4,6 +4,7 @@
       <div class="logo" />
       <a-menu theme="dark" v-model:selectedKeys="selectedKeys" mode="inline">
         <a-menu-item key="home">
+          <router-link to="/" />
           <HomeOutlined />
           <span>首页</span>
         </a-menu-item>
@@ -14,7 +15,9 @@
               <span>任务管理</span>
             </span>
           </template>
-          <a-menu-item key="1">任务创建</a-menu-item>
+          <a-menu-item key="1">
+            <router-link to="/task_definition">任务定义</router-link>
+          </a-menu-item>
           <a-menu-item key="2">任务实例</a-menu-item>
         </a-sub-menu>
         <a-sub-menu key="user">
@@ -24,9 +27,8 @@
               <span>用户管理</span>
             </span>
           </template>
-          <a-menu-item key="4">任务权限</a-menu-item>
-          <a-menu-item key="5"></a-menu-item>
-          <a-menu-item key="6">Alex</a-menu-item>
+          <a-menu-item key="4">用户管理</a-menu-item>
+          <a-menu-item key="6">用户任务</a-menu-item>
         </a-sub-menu>
         <a-sub-menu key="datasoure">
           <template #title>
@@ -41,6 +43,10 @@
           <a-menu-item key="8">Mysql</a-menu-item>
           <a-menu-item key="9">Redis</a-menu-item>
         </a-sub-menu>
+        <a-menu-item key="about">
+          <router-link to="/about" />
+          <EnvironmentOutlined /> <span>关于我们</span>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>
@@ -63,7 +69,8 @@ import {
   HomeOutlined,
   DesktopOutlined,
   UserOutlined,
-  MenuUnfoldOutlined
+  MenuUnfoldOutlined,
+  EnvironmentOutlined
 } from '@ant-design/icons-vue';
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
@@ -73,6 +80,7 @@ export default defineComponent({
     DesktopOutlined,
     UserOutlined,
     MenuUnfoldOutlined,
+    EnvironmentOutlined
   },
   data() {
     return {

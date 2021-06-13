@@ -14,11 +14,11 @@ import java.util.List;
 public class EmployeeController {
 
     @Resource
-    EmployeeService userService;
+    EmployeeService employeeService;
 
     @GetMapping("/employeeList")
     public  List<Employee> userList(){
-        List<Employee> list = userService.list();
+        List<Employee> list = employeeService.list();
         return list;
     }
 
