@@ -4,7 +4,7 @@
       <div class="logo" />
       <a-menu theme="dark" v-model:selectedKeys="selectedKeys" mode="inline">
         <a-menu-item key="home">
-          <router-link to="/home" />
+          <router-link to="/" />
           <HomeOutlined />
           <span>首页</span>
         </a-menu-item>
@@ -20,7 +20,7 @@
           </a-menu-item>
           <a-menu-item key="2">任务实例</a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="user">
+          <a-sub-menu key="user">
           <template #title>
             <span>
               <user-outlined />
@@ -42,6 +42,7 @@
           </a-menu-item>
           <a-menu-item key="8">Mysql</a-menu-item>
           <a-menu-item key="9">Redis</a-menu-item>
+          <a-menu-item key="123">自定义函数</a-menu-item>
         </a-sub-menu>
         <a-menu-item key="about">
           <router-link to="/about" />

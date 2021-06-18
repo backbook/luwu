@@ -6,7 +6,7 @@ import KafkaData from '../views/metadata/KafkaData.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/home',
+    path: '/',
     name: 'Home',
     component: Home
   },
