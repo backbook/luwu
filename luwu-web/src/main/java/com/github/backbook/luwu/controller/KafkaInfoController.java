@@ -3,7 +3,6 @@ package com.github.backbook.luwu.controller;
 import com.github.backbook.luwu.model.pojo.KafkaInfo;
 import com.github.backbook.luwu.model.req.KafkaInfoReq;
 import com.github.backbook.luwu.service.KafkaInfoService;
-import com.github.backbook.luwu.utils.CopyUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -24,8 +23,7 @@ public class KafkaInfoController {
 
     @PostMapping("/insertKafkaInfo")
     public void insertKafkaInfo(@RequestBody KafkaInfoReq kafkaInfoReq){
-        KafkaInfo kafkaInfo = CopyUtil.copy(kafkaInfoReq, KafkaInfo.class);
-        kafkaInfoService.insert(kafkaInfo);
+        kafkaInfoService.insert(kafkaInfoReq);
     }
 
 

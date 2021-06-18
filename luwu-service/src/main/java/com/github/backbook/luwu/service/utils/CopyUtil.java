@@ -1,4 +1,4 @@
-package com.github.backbook.luwu.utils;
+package com.github.backbook.luwu.service.utils;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;

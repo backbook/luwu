@@ -2,7 +2,9 @@ package com.github.backbook.luwu.service.imp;
 
 import com.github.backbook.luwu.dao.mapper.KafkaMapper;
 import com.github.backbook.luwu.model.pojo.KafkaInfo;
+import com.github.backbook.luwu.model.req.KafkaInfoReq;
 import com.github.backbook.luwu.service.KafkaInfoService;
+import com.github.backbook.luwu.service.utils.CopyUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,7 +25,8 @@ public class KafkaInfoServiceImp implements KafkaInfoService {
 
 
 
-    public void insert(KafkaInfo kafkaInfo) {
+    public void insert(KafkaInfoReq KafkaInfoReq) {
+        KafkaInfo kafkaInfo = CopyUtil.copy(KafkaInfoReq, KafkaInfo.class);
         kafkaMapper.insert(kafkaInfo);
     }
 }
