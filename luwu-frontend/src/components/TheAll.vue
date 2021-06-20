@@ -38,9 +38,11 @@
             </span>
           </template>
           <a-menu-item key="7">
-            <router-link to="/Kafka_data">Kafka</router-link>
+            <router-link to="/Kafka_metadata">Kafka</router-link>
           </a-menu-item>
-          <a-menu-item key="8">Mysql</a-menu-item>
+          <a-menu-item key="8">
+            <router-link to="/">mysql</router-link>
+          </a-menu-item>
           <a-menu-item key="9">Redis</a-menu-item>
           <a-menu-item key="123">自定义函数</a-menu-item>
         </a-sub-menu>

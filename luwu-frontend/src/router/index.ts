@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import TasksDefinition from '../views/task/TaskDefinition.vue'
-import KafkaData from '../views/metadata/KafkaData.vue'
+import KafkaData from '../views/metadata/KafkaMetadata.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -21,8 +21,8 @@ const routes: Array<RouteRecordRaw> = [
     component: TasksDefinition
   },
   {
-    path: '/kafka_data',
-    name: 'KafkaData',
+    path: '/kafka_metadata',
+    name: 'KafkaMetadata',
     component: KafkaData
   }
 ]
