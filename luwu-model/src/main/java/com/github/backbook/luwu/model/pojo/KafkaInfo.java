@@ -9,7 +9,6 @@ import lombok.Data;
 public class KafkaInfo extends BaseModel{
 
     @TableId(value = "cluster_id", type = IdType.AUTO)
-    @OrderBy
     private Long clusterId;
     @TableField("cluster_name")
     private String clusterName;

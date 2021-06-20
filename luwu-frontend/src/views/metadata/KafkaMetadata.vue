@@ -58,7 +58,9 @@
 </template>
 <script lang="ts">
 import { SmileOutlined, DownOutlined, } from '@ant-design/icons-vue';
-import { defineComponent,ref } from 'vue';
+import {defineComponent, onMounted, ref} from 'vue';
+import axios from "axios";
+
 const columns = [
   {
     dataIndex: 'name',
@@ -175,15 +177,37 @@ const data = [
   },
 ];
 
+
 export default defineComponent({
+
   setup() {
+
     const param = ref();
     param.value = {}
+
+
+    const handlerQuery = () => {
+      console.log("初始化")
+      axios.get("/mng/metadata/getKafakInfoList").then((response) =>{
+        const data =  response.data
+        console.log(data)
+      });
+    };
+    /**
+     * 初始化触发
+     */
+    onMounted(()=>{
+      handlerQuery();
+    });
+
     return {
       data,
       columns,
-      param
+      param,
+      handlerQuery
     };
+
+
   },
   components: {
     SmileOutlined,
