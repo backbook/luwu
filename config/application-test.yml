@@ -33,6 +33,8 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxPoolPreparedStatementPerConnectionSize: 20
+    hikari:
+        max-lifetime: 120000
 
 #热部署组件
 devtools:

@@ -32,7 +32,7 @@ public class LogAspect {
     /**
      * 定义切点
      */
-    @Pointcut("execution(public * com.backbook.*.controller..*Controller.*(..))")
+    @Pointcut("execution(public * com.github.backbook.*.controller..*Controller.*(..))")
     public void controllerPointcut(){
 
     }
