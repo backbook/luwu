@@ -17,7 +17,7 @@ public class KafkaInfoController {
     @Resource
     KafkaInfoService kafkaInfoService;
 
-    @GetMapping("/getKafakInfoList")
+    @GetMapping("/getKafkaInfoList")
     public List<KafkaInfo> getKafkaInfoList(){
         return kafkaInfoService.list();
     }

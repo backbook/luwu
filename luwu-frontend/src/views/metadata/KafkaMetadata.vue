@@ -189,7 +189,7 @@ export default defineComponent({
 
     const handlerQuery = () => {
       console.log("初始化")
-      axios.get("/mng/metadata/getKafakInfoList/").then((response) =>{
+      axios.get("/mng/metadata/getKafkaInfoList/").then((response) =>{
         if (response.status == 200){
           const data =  response.data
           message.info("已经刷新")
