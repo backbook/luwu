@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/mng/metadata/")
+@CrossOrigin
 public class KafkaInfoController {
 
 

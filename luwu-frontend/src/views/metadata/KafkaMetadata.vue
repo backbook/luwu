@@ -57,8 +57,9 @@
   </a-layout>
 </template>
 <script lang="ts">
-import { SmileOutlined, DownOutlined, } from '@ant-design/icons-vue';
+import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
 import {defineComponent, onMounted, ref} from 'vue';
+import {message} from 'ant-design-vue'
 import axios from "axios";
 
 const columns = [
@@ -188,9 +189,14 @@ export default defineComponent({
 
     const handlerQuery = () => {
       console.log("初始化")
-      axios.get("/mng/metadata/getKafakInfoList").then((response) =>{
-        const data =  response.data
-        console.log(data)
+      axios.get("/mng/metadata/getKafakInfoList/").then((response) =>{
+        if (response.status == 200){
+          const data =  response.data
+          message.info("已经刷新")
+        }else {
+          message.error("请求超时")
+        }
+
       });
     };
     /**
