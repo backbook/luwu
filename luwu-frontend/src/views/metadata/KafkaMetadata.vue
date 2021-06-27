@@ -19,29 +19,25 @@
           </a-form-item>
         </a-form>
       </p>
-      <a-table :columns="columns"
-               :row-key="record => record.clusterId"
-               :data-source="data"
-      >
-        <template #cover="{ text: cover }">
-          <img v-if="cover" :width="40" :height="40" :src="cover" alt="avatar" />
-        </template>
-       <template v-slot:action="{text, record}">
+      <a-table
+          :columns="columns"
+          :row-key="record => record.clusterId"
+          :data-source="data">
+
+       <template v-slot:action="{ record }">
           <a-space size="small">
-            <a-button type="primary" @click="edit(record)">
+            <a-button type="primary" @click="handleEdit(record)">
               编辑
             </a-button>
             <a-popconfirm
                 title="删除后不可恢复，确认删除?"
                 ok-text="是"
                 cancel-text="否"
-                @confirm="handleDelete(record.id)"
-            >
+                @confirm="handleDelete(record.clusterId)">
               <a-button type="danger">
                 删除
               </a-button>
             </a-popconfirm>
-
           </a-space>
         </template>
       </a-table>
@@ -114,6 +110,21 @@ export default defineComponent({
 
       });
     };
+
+    /**
+     * 编辑
+     */
+    const handleEdit = (record: any) => {
+      console.log(record.clusterId)
+    };
+
+    /**
+     * 删除
+     */
+    const handleDelete = (clusterId: number) => {
+      console.log(clusterId)
+    }
+
     /**
      * 初始化触发
      */
@@ -125,7 +136,10 @@ export default defineComponent({
       data,
       columns,
       param,
-      handlerQuery
+
+      handlerQuery,
+      handleDelete,
+      handleEdit
     };
   },
 });
