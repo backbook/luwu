@@ -34,7 +34,8 @@ spring:
     poolPreparedStatements: true
     maxPoolPreparedStatementPerConnectionSize: 20
     hikari:
-        max-lifetime: 120000
+        max-lifetime: 30000
+        connection-test-query: SELECT 1
 
 #热部署组件
 devtools:
