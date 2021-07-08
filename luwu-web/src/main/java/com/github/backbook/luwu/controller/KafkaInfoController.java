@@ -28,5 +28,11 @@ public class KafkaInfoController {
     }
 
 
+    @PostMapping("/getKafkaInfoListPage")
+    public  List<KafkaInfo> getKafkaInfoListPage(@RequestBody KafkaInfoReq kafkaInfoReq){
+        return kafkaInfoService.listPage();
+    }
+
+
 
 }

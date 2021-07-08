@@ -12,4 +12,7 @@ public interface KafkaInfoService {
 
     void insert(KafkaInfoReq kafkaInfoReq);
 
+    List<KafkaInfo> listPage();
+
+
 }
