@@ -16,6 +16,10 @@ spring:
       propagate-transient-marker: true
   thymeleaf:
     prefix: "classpath:/static/"
+  #热部署组件
+  devtools:
+    restart:
+      enabled: true #是否支持热部署
   datasource:
     url: jdbc:mysql://42.193.142.13:3306/luwu?useUnicode=true&characterEncoding=utf-8
     username: root
@@ -37,11 +41,16 @@ spring:
         max-lifetime: 30000
         connection-test-query: SELECT 1
 
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
 #热部署组件
 devtools:
   livereload:
     enabled: true #是否支持livereload
-    port: 8666
+    port: 6565
   restart:
     enabled: true #是否支持热部署
 

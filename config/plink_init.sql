@@ -57,3 +57,14 @@ CREATE TABLE IF NOT EXISTS `job_state_info`
   KEY `idx_job_id` (`job_id`) USING BTREE
 ) ENGINE=INNODB
   DEFAULT CHARSET=utf8 COMMENT ='任务状态信息表';
+
+
+create table `tb_user`(
+    `id` bigint(10) primary key NOT NULL AUTO_INCREMENT COMMENT '主键id',
+    `user_name` varchar(50) NOT NULL COMMENT '用户名',
+    `password` varchar(50) NOT NULL COMMENT '密码',
+    `name` varchar(50) NOT NULL COMMENT '名字',
+    `age` int NOT NULL COMMENT '年纪',
+    `email` varchar(50) NOT NULL COMMENT '名字'
+)ENGINE = InnoDB
+ DEFAULT CHARSET = utf8 COMMENT ='user';
