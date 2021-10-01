@@ -33,6 +33,11 @@ public class KafkaInfoController {
         return kafkaInfoService.listPage();
     }
 
+    @GetMapping("/getOne")
+    public  KafkaInfo getKafkaOne(){
+        return kafkaInfoService.getOne();
+    }
+
 
 
 }

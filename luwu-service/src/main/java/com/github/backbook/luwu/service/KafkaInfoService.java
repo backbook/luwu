@@ -14,5 +14,6 @@ public interface KafkaInfoService {
 
     List<KafkaInfo> listPage();
 
+    KafkaInfo getOne();
 
 }

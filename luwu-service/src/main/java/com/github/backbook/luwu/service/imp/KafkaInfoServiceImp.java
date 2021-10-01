@@ -24,6 +24,11 @@ public class KafkaInfoServiceImp implements KafkaInfoService {
         return kafkaMapper.selectList(null);
     }
 
+    @Override
+    public KafkaInfo getOne() {
+        return (KafkaInfo) new KafkaInfo().selectById(3);
+    }
+
 
 
     public void insert(KafkaInfoReq KafkaInfoReq) {
