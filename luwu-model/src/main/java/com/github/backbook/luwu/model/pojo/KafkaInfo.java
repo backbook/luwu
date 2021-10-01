@@ -3,7 +3,9 @@ package com.github.backbook.luwu.model.pojo;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("luwu_kafka_info") // 声明表名称
 public class KafkaInfo extends BaseModel{
